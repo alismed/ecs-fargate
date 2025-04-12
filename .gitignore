@@ -4,8 +4,12 @@
 *.swp
 
 node_modules/
+yarn.lock
+package-lock.json
+npm-debug.log*
 
-logs
+# Logs
+logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -54,7 +58,10 @@ terraform.rc
 # because using github actions
 *.hcl
 
+# Environment
 .env
+.env.local
+
 # Act testing files
 .act/*
 pull_request.json
