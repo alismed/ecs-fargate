@@ -3,7 +3,7 @@ name: "Infrastructure Workflow"
 on:
   pull_request:
     types: opened
-    branches: [ main, feature/* ]
+    branches: [ feature/* ]
 
 permissions:
   pull-requests: write
