@@ -18,7 +18,6 @@ jobs:
 
       - name: Install dependencies
         run: |
-          apk add --update nodejs npm
           npm install -g figlet-cli
 
       - uses: aws-actions/configure-aws-credentials@v2
