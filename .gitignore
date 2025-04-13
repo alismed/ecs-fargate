@@ -4,6 +4,9 @@
 *.swp
 
 node_modules/
+coverage
+dist
+build
 yarn.lock
 package-lock.json
 npm-debug.log*

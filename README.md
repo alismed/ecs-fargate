@@ -38,13 +38,29 @@ ssh-keygen
 ```shell
 # Install dependencies
 npm init -y
-npm install express
+npm install
 
-# Build and push Docker image
+# Check formatting without changing files
+npm run format:check
+
+# Format all files
+npm run format
+```
+
+**Build and push Docker image**
+```shell
 cd app
 docker build -t alismed/ecs-fargate:latest .
 docker login
 docker push alismed/ecs-fargate:latest
+```
+
+**Run tests**
+```shell
+npm test
+
+# Run tests with coverage:
+npm run test:coverage
 ```
 
 ### 3. Infrastructure Deployment
