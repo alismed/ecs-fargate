@@ -123,7 +123,20 @@ curl -s https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo ba
 
 2. Run test workflow:
 ```bash
-act -W .github/workflows/01-validate.yaml -e .act/pull_request.json --secret-file .act/.env
+# List available workflows
+act -l
+
+# Run workflow with pull request event
+act pull_request -e .act/pull_request.json
+
+# Run specific workflow
+act -W .github/workflows/main.yaml \
+    -e .act/pull_request.json \
+    --secret-file .act/.env \
+    --container-architecture linux/amd64
+
+# Run with verbose output
+act -v pull_request -e .act/pull_request.json --secret-file .act/.env
 ```
 
 ## Troubleshooting

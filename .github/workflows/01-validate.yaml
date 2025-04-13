@@ -15,9 +15,8 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-22.04
-    container:
-      context: .github/docker
-      dockerfile: Dockerfile
+    container: hashicorp/terraform:1.5
+
     outputs:
       region: ${{ steps.vars.outputs.region }}
       destroy_infra: ${{ steps.vars.outputs.destroy_infra }}
@@ -26,7 +25,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      
+
+      - name: Install Node.js
+        run: |
+          apk add --update nodejs npm
+          npm install -g figlet-cli
+
       - id: vars
         name: Read Variables
         run: |
